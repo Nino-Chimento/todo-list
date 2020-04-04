@@ -19,25 +19,42 @@ $(document).ready(function () {
     
   })
   $(document).on("click",".fa-clipboard-list",function () {
-    console.log("n");
      $(this).parents("li").children("input").removeClass("display-none");
      $(this).parents("li").children(".fa-notes-medical").removeClass("display-none");
 
   })
   $(document).on("keypress","li input",function () {
     if(event.which == 13 || event.keyCode == 13){
-      var id = $(this).parents("li").attr("data-id")
       var nuovoTesto = $(this).val();
-      modifica(id,nuovoTesto)
-      console.log(id + nuovoTesto);
+      console.log(nuovoTesto);
+      $(this).prev().text("");
+      $(this).prev().text(nuovoTesto);
+      $(this).text("");
+      $(this).addClass("display-none");
+      $(this).parents("li").children(".fa-notes-medical").addClass("display-none");
     }
   })
   $(document).on("click",".fa-notes-medical",function () {
-    var id = $(this).parents("li").attr("data-id")
-    var nuovoTesto = $(this).parents("li").children("input").val();
-    modifica(id,nuovoTesto)
+    var nuovoTesto = $(this).prev().val();
+    $(this).parent("li").children("p").text("");
+    $(this).parent("li").children("p").text(nuovoTesto);
+    $(this).addClass("display-none");
+    $(this).prev("input").addClass("display-none");
   })
+  $(".fa-check").click(function() {
+    if ($(this).parents("li").hasClass("green")){
+      console.log("ni");
+      $(this).parents("li").removeClass("green");
+    }else{
+      $(this)
+        .parents("li")
+        .addClass("green");
+    }
+  });
 })
+      
+      
+    
 
 // funzione stampa
 // function printAll() {

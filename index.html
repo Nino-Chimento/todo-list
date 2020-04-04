@@ -14,17 +14,19 @@
     <h2 class ="text-center">Todo List</h2>
     <div class="wrap-list">
       <ul> 
-        <li data-id="{{id}}">Preparare il progetto
+        <li data-id="{{id}}"> <p>Preparare il progetto</p> 
           <input class="display-none" type="text" name="" value="" placeholder=" modifica">
           <i class="fas fa-notes-medical display-none"></i>
           <span><i class="fas fa-clipboard-list"></i></span>
           <span class="delete text-right">x</span>
+          <span><i class="fas fa-check"></i></span>
         </li>
-        <li data-id="{{id}}">Consegnare il progetto
+        <li data-id="{{id}}"> <p>Consegnare il progetto</p> 
           <input class="display-none" type="text" name="" value="" placeholder=" modifica">
           <i class="fas fa-notes-medical display-none"></i>
           <span><i class="fas fa-clipboard-list"></i></span>
           <span class="delete text-right">x</span>
+          <span><i class="fas fa-check"></i></span>
         </li>
       </ul>
     </div>
@@ -38,11 +40,12 @@
 
     <script id="entry-template" type="text/x-handlebars-template">
 
-      <li data-id = "{{id}}">{{text}}
+      <li data-id = "{{id}}"><p>{{text}}</p> 
         <input class="display-none" type="text" name="" value="" placeholder=" modifica">
         <i class="fas fa-notes-medical display-none"></i>
         <span><i class="fas fa-clipboard-list"></i></span>
         <span class="delete">x</span>
+        <span><i class="fas fa-check"></i></span>
       </li>
     </script>
     <script src="script.js" charset="utf-8"></script>
